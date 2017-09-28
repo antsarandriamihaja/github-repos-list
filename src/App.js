@@ -18,10 +18,10 @@ class App extends Component {
     this.handleFilter = this.handleFilter.bind(this);
   }
 
+  //fetch samsao public repo and update state
   loadRepos() {
     listRepos()
       .then((repos) => {
-        console.log('repos in load => ', repos);
         this.setState({
           listRepo: repos
         })
@@ -40,6 +40,7 @@ class App extends Component {
     }
   }
 
+  //filter repository based on repo name
   getFilteredRepos() {
     let filteredRepos = this.state.listRepo;
     if (filteredRepos) {
@@ -79,6 +80,8 @@ class App extends Component {
       return filteredRepos;
     }
   }
+
+  //render all or filtered repositories
   renderListRepo() {
     const listRepo  = this.getFilteredRepos();
     if (listRepo) {
@@ -102,6 +105,7 @@ class App extends Component {
     }
   }
 
+  //set selected repo to render
   handleViewRepo(repo) {
     this.setState({
       viewRepo: true,
@@ -109,6 +113,7 @@ class App extends Component {
     })
   }
 
+  //renders the selected repo
   renderViewRepo() {
     const { selectedRepo, viewRepo } = this.state;
     if (viewRepo && selectedRepo) {
@@ -127,12 +132,13 @@ class App extends Component {
       )
     }
   }
-
+  //updates filter based on user input
   handleFilter(event) {
     this.setState({
       filter: event.target.value
     });
   }
+  
   render() {
     const { viewRepo } = this.state;
     return (
