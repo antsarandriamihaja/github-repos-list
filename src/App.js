@@ -46,12 +46,11 @@ class App extends Component {
     if (filteredRepos) {
       filteredRepos.sort((a, b) => {
         var delta = 0;
-        if (a.lastName) {
+        if (a.full_name) {
           delta = a
             .full_name
             .localeCompare(b.full_name);
         }
-
         if (delta === 0 && a.full_name) {
           delta = a
             .full_name
@@ -74,7 +73,11 @@ class App extends Component {
           if (full_name.indexOf(filter) > -1) {
             return repo;
           }
+           let language = (repo.language ? repo.language.toLowerCase() : '');
 
+           if (language.indexOf(filter) > -1) {
+             return repo;
+           }
         });
       }
       return filteredRepos;
@@ -151,8 +154,9 @@ class App extends Component {
             placeholder="Search repository..."
             defaultValue={this.state.filter}
             onChange={this.handleFilter} />
+            <hr className='break'/>
         </div>
-        <Motion style={{ x: spring(viewRepo ? -200 : 0) }}>
+        <Motion style={{ x: spring(viewRepo ? -250 : 0) }}>
           {({ x }) =>
             <div className="list" style={{
               WebkitTransform: `translate3d(${x}px, 0, 0)`,

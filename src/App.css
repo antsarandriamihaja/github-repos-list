@@ -13,13 +13,14 @@ html {
 .header {
   margin-top: 3%
 }
+
 .listRepos {
   display: block;
   margin: 0 auto;
   margin-top: 5%;
-  width:40%;
-  height: 600px;
-  overflow-y: scroll;
+  height:auto;
+  max-height: 600px;
+  overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #00a98f;
 }
@@ -27,10 +28,10 @@ html {
   display: block;
   margin: 0 auto;
   padding: 30px;
-  width: 100%;
   height: 40px;
   border: 1px solid #00a98f;
 }
+
 .repoInList:hover {
   background-color: #212121;
 }
@@ -38,10 +39,11 @@ html {
 .selectedRepo {
   padding: 30px;
   position: fixed;
-  right: 150px;
+  right: 10%;
   top: 300px;
   border: 1px solid #00a98f;
 }
+
 .searchField {
   outline: 0;
   border-width: 0 0 2px 0;
@@ -52,26 +54,129 @@ html {
   font-size: 2em;
   margin-left: 15%;
 }
-.repoName {
-  font-size:1.2em;
-}
-.name {
-  font-size: 1.2em;
-}
-.language {
-  margin-top: 10px;
-  font-size: 0.9em;
-}
-.defaultBranch {
-  font-size: 0.9em;
-}
-.forks {
-  font-size: 0.9em;
-}
-.update {
-  margin-top: 10px;
-  font-size: 0.8em;
-}
+
 .searchField:focus {
   color: #00a98f;
+}
+
+@media screen and (min-width: 1050px) {
+  .listRepos {
+    width:40%;
+  }
+  .repoInList {
+    width: 90%;
+  }
+  .repoName {
+    font-size:1.2em;
+  }
+  .name {
+    font-size: 1.2em;
+  }
+  .language {
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  .defaultBranch {
+    font-size: 0.9em;
+  }
+  .forks {
+    font-size: 0.9em;
+  }
+  .update {
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+
+}
+
+@media screen and (max-width: 1040px) and (min-width: 700px) {
+  .listRepos {
+    width:35%;
+    position: relative;
+    left: 5%
+  }
+  .repoInList {
+    width: 85%;
+  }
+  .repoName {
+    font-size:1em;
+  }
+  .name {
+    font-size: 1em;
+  }
+  .language {
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+  .defaultBranch {
+    font-size: 0.8em;
+  }
+  .forks {
+    font-size: 0.8em;
+  }
+  .update {
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+  .listRepos {
+    width:40%;
+    margin-left:50%;
+  }
+  .repoInList {
+    width: 80%;
+  }
+  .repoName {
+    font-size:1em;
+  }
+  .name {
+    font-size: 1em;
+  }
+  .language {
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+  .defaultBranch {
+    font-size: 0.8em;
+  }
+  .forks {
+    font-size: 0.8em;
+  }
+  .update {
+    margin-top: 10px;
+    font-size: 0.7em;
+  }
+}
+
+
+@media screen and (max-width:519px) {
+  .listRepos {
+    width:35%;
+    margin-left: 60%;
+  }
+  .repoInList {
+    width: 60%;
+  }
+  .repoName {
+    font-size:0.8em;
+  }
+  .name {
+    font-size: 0.8em;
+  }
+  .language {
+    margin-top: 10px;
+    font-size: 0.6em;
+  }
+  .defaultBranch {
+    font-size: 0.6em;
+  }
+  .forks {
+    font-size: 0.6em;
+  }
+  .update {
+    margin-top: 5px;
+    font-size: 0.4em;
+  }
 }
