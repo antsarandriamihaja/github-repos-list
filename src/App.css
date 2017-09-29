@@ -38,7 +38,6 @@ html {
 }
 
 .selectedRepo {
-  padding: 30px;
   position: fixed;
   right: 10%;
   top: 300px;
@@ -66,6 +65,9 @@ html {
   }
   .repoInList {
     width: 90%;
+  }
+  .selectedRepo {
+    padding: 30px;
   }
   .repoName {
     font-size:1.2em;
@@ -99,6 +101,9 @@ html {
   .repoInList {
     width: 85%;
   }
+  .selectedRepo {
+    padding: 30px;
+  }
   .repoName {
     font-size:1em;
   }
@@ -129,11 +134,14 @@ html {
   .repoInList {
     width: 80%;
   }
+  .selectedRepo {
+    padding: 10px;
+  }
   .repoName {
     font-size:1em;
   }
   .name {
-    font-size: 1em;
+    font-size: 0.8em;
   }
   .language {
     margin-top: 10px;
